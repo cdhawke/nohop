@@ -1,15 +1,11 @@
-
-export interface DebounceProps {
-  callback: Function;
-  wait: number;
-}
-
-const debounce = ({callback, wait = 300}: DebounceProps) => {
-  let timer: number;
-  return (...args: any[]) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { callback.apply(this, args); }, wait);
+const debounce = (callback: (...args: unknown[]) => void, wait: number) => {
+  let timeout: NodeJS.Timeout;
+  return (...args: unknown[]) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      callback.apply(this, args);
+    }, wait);
   };
-}
+};
 
 export default debounce;

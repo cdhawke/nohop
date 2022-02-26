@@ -1,11 +1,18 @@
+import nohop from '.';
 
-import packageTemplateFunction, { TsPackageTemplateProps } from '.';
+jest.useFakeTimers();
+jest.spyOn(global, 'setTimeout');
 
-const props: TsPackageTemplateProps = {input: 1, multiplicand: 2}
-
-describe('TS Package Template', () => {
-  it('succeeds', () => {
-    const result = packageTemplateFunction(props);
-    expect(result).toEqual(2);
+let tracker = 0;
+describe('nohop', () => {
+  const f = () => {
+    tracker = 2;
+  };
+  it('should debounce', async () => {
+    nohop(f, 100)();
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 100);
+    jest.runAllTimers();
+    expect(tracker).toEqual(2);
   });
 });

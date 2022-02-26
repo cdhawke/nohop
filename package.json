@@ -20,14 +20,8 @@
     "url": "git+https://github.com/cdhawke/nohop.git"
   },
   "keywords": [
-    "typescript",
-    "template",
-    "package",
-    "eslint",
-    "rollup",
-    "jest",
-    "husky",
-    "prettier"
+    "nohop",
+    "debounce"
   ],
   "author": "Christopher Hawke (https://github.com/cdhawke)",
   "license": "MIT",
