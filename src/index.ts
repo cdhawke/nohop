@@ -1,11 +1,15 @@
 
-export interface TsPackageTemplateProps {
-  input: number;
-  multiplicand: number;
+export interface DebounceProps {
+  callback: Function;
+  wait: number;
 }
 
-export const packageTemplateFunction = ({input, multiplicand}: TsPackageTemplateProps) => {
-  return input * multiplicand;
+const debounce = ({callback, wait = 300}: DebounceProps) => {
+  let timer: number;
+  return (...args: any[]) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { callback.apply(this, args); }, wait);
+  };
 }
 
-export default packageTemplateFunction;
+export default debounce;

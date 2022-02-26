@@ -1,7 +1,7 @@
 {
-  "name": "ts-package-template",
+  "name": "nohop",
   "version": "1.0.0",
-  "description": "Typescript template for creating and publishing with rollup, typescript, jest, eslint, prettier, and husky",
+  "description": "Debounce a function. Simple.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cdhawke/ts-package-template.git"
+    "url": "git+https://github.com/cdhawke/nohop.git"
   },
   "keywords": [
     "typescript",
@@ -32,9 +32,9 @@
   "author": "Christopher Hawke (https://github.com/cdhawke)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cdhawke/ts-package-template/issues"
+    "url": "https://github.com/cdhawke/nohop/issues"
   },
-  "homepage": "https://github.com/cdhawke/ts-package-template#ts-package-template",
+  "homepage": "https://github.com/cdhawke/nohop#nohop",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",

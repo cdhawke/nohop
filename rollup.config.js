@@ -14,7 +14,7 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
-        name: 'ts-package-template',
+        name: 'nohop',
         exports: 'named',
       },
       {
