@@ -13,21 +13,24 @@ export default [
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: true,
+        sourcemap: false,
         name: 'nohop',
         exports: 'named',
       },
       {
         file: packageJson.module,
         format: 'esm',
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
     plugins: [
       external(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({
+        sourceMap: false,
+        tsconfig: './tsconfig.json',
+      }),
       terser(),
     ],
   },
