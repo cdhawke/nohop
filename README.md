@@ -6,7 +6,7 @@
 
 Debouncing is the practice of calling a function a MAXIMUM of one time within a certain amount of time.
 
-This is a small (<10kb) package that provides the ability to debounce a function. It also allows cancellation of the debounce after it's been started.
+This is a small (<12kb) package that provides the ability to debounce a function. It also allows cancellation of the debounce after it's been started.
 
 - [nohop](#nohop)
   - [Installation](#installation)
