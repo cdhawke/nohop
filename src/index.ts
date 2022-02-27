@@ -1,11 +1,16 @@
-const debounce = (func: (...args: any[]) => void, wait: number) => {
+const noHop = (func: (...args: any[]) => void, wait: number) => {
   let timeout: NodeJS.Timeout;
-  return (...args: any[]) => {
-    clearTimeout(timeout);
+  const debounce = (...args: any[]) => {
+    timeout && clearTimeout(timeout);
     timeout = setTimeout(() => {
-      func(args);
+      return func(...args);
     }, wait);
   };
+
+  debounce.clear = () => {
+    timeout && clearTimeout(timeout);
+  };
+  return debounce;
 };
 
-export default debounce;
+export default noHop;
