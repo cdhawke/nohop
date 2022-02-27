@@ -13,7 +13,6 @@
     "lint": "eslint src",
     "test": "jest",
     "prepare": "husky install",
-    "version": "npm version patch",
     "prepublishOnly": "npm run build && npm version patch"
   },
   "repository": {
