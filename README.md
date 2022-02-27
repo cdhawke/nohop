@@ -2,6 +2,15 @@
 
 Debounce a function. Simple.
 
+- [nohop](#nohop)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [debounce](#debounce)
+    - [cancel](#cancel)
+  - [Examples](#examples)
+    - [Event Handlers](#event-handlers)
+    - [React](#react)
+
 ## Installation
 
 > Note: This package was compiled for ES6. It is only meant to be used in modern browsers. Don't try an use it in IE, or anything that doesn't support arrow functions
@@ -20,15 +29,31 @@ yarn add nohop
 
 ## Usage
 
+### debounce
+
+`debounce(fn, wait = 300)`
+
 ```tsx
 import debounce from 'nohop';
+
 const originalFunction = async () => {
   const response = await fetch(...);
   const json = await response.json();
   console.log(json);
 };
+
 const debouncedFunction = debounce(originalFunction, 300);
-// Use the debounced function in a click handler
+// Use the debounced function somewhere
+```
+
+### cancel
+
+`debounce(fn, wait = 300).cancel()`
+
+```tsx
+// ...
+debouncedFunction(); // call the function
+debouncedFunction.cancel(); // immediately cancel the function, resulting in 'originalFunction' never being invoked.
 ```
 
 ## Examples
