@@ -1,6 +1,6 @@
 {
   "name": "nohop",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Debounce a function. Simple.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
