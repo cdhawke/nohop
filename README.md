@@ -36,8 +36,6 @@ yarn add nohop
 
 ## Usage
 
-> Note: This function only provides the ability to debounce, and cancel. There is no way to immediately invoke functions after they've been debounced. For this functionality, try using [debounce](https://www.npmjs.com/package/debounce)
-
 ### debounce
 
 `debounce(fn, wait = 300)` will return a function that, when called, will trigger the passed `fn` after the specified amount of `wait` time. If the debounced function is called again before the amount of `wait` time has elapsed, then the internal timer will reset, delaying the `fn` invocation.
